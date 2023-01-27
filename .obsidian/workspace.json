@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "0d7d2499e9795f21",
+        "id": "4785546686bdb65a",
         "type": "tabs",
         "children": [
           {
-            "id": "52d3eb536130f333",
+            "id": "a470ce0dcd3312b1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regression463/Notebook.md"
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
               }
             }
           }
@@ -85,8 +85,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb3aabb3e32ed97",
@@ -102,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regression463/Notebook.md"
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
               }
             }
           },
@@ -183,17 +182,17 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "52d3eb536130f333",
+  "active": "a470ce0dcd3312b1",
   "lastOpenFiles": [
-    "Regression463/Notebook.md",
+    "PrinProg314/textbook.pdf",
+    "Excalidraw/eps-nfa.excalidraw.md",
     "PrinProg314/Problem Sets/hw1/314_HW_1.md",
-    "PrinProg314/Notebook.md",
-    "Regression463/Lecture Notes/Lecture 1.md",
-    "Templates/Assignment.md",
+    "image.excalidraw.md",
+    "Excalidraw/Drawing 2023-01-27 15.58.35.excalidraw.md",
+    "PrinProg314/Lecture Notes/Lecture 4.md",
     "PrinProg314/Problem Sets/hw1/hw1.pdf",
-    "Excalidraw/Drawing 2023-01-26 12.42.32.excalidraw.md",
-    "Excalidraw/Drawing 2023-01-26 12.44.01.excalidraw.md",
-    "Untitled.canvas",
-    "MachineLearning461/Lecture Notes/Lecture 3.md"
+    "PrinProg314/Lecture Notes/Lecture 3.md",
+    "PrinProg314/Lecture Notes/Lecture 2.md",
+    "PrinProg314/Notebook.md"
   ]
 }
