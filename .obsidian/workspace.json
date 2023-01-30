@@ -11,15 +11,26 @@
             "id": "52d3eb536130f333",
             "type": "leaf",
             "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/eps-nfa.excalidraw.md"
+              }
+            }
+          },
+          {
+            "id": "28d63185c381ae2a",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +88,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regression463/Notebook.md"
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
               }
             }
           }
@@ -85,8 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb3aabb3e32ed97",
@@ -102,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regression463/Notebook.md",
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regression463/Notebook.md"
+                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
               }
             }
           },
@@ -183,17 +193,17 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "52d3eb536130f333",
+  "active": "28d63185c381ae2a",
   "lastOpenFiles": [
-    "Regression463/Notebook.md",
+    "Excalidraw/eps-nfa.excalidraw.md",
     "PrinProg314/Problem Sets/hw1/314_HW_1.md",
+    "PrinProg314/textbook.pdf",
+    "PrinProg314/Problem Sets/hw1/hw1.pdf",
+    "Regression463/Notebook.md",
     "PrinProg314/Notebook.md",
     "Regression463/Lecture Notes/Lecture 1.md",
-    "Templates/Assignment.md",
-    "PrinProg314/Problem Sets/hw1/hw1.pdf",
-    "Excalidraw/Drawing 2023-01-26 12.42.32.excalidraw.md",
-    "Excalidraw/Drawing 2023-01-26 12.44.01.excalidraw.md",
-    "Untitled.canvas",
-    "MachineLearning461/Lecture Notes/Lecture 3.md"
+    "PrinProg314/Lecture Notes/Lecture 4.md",
+    "MachineLearning461/Lecture Notes/Lecture 3.md",
+    "conflict-files-obsidian-git.md"
   ]
 }
