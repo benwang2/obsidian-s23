@@ -4,26 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "0d7d2499e9795f21",
+        "id": "85d08bb6487cbfce",
         "type": "tabs",
         "children": [
           {
-            "id": "52d3eb536130f333",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/eps-nfa.excalidraw.md"
-              }
-            }
-          },
-          {
-            "id": "28d63185c381ae2a",
+            "id": "b2356b0ed69ba914",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
+                "file": "PrinProg314/Lecture Notes/Lecture 4.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "41de008fdbc59485",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PrinProg314/Lecture Notes/Lecture 5.md",
                 "mode": "source",
                 "source": false
               }
@@ -88,7 +90,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
+                "file": "PrinProg314/Lecture Notes/Lecture 5.md"
               }
             }
           }
@@ -96,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2cb3aabb3e32ed97",
@@ -112,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
+                "file": "PrinProg314/Lecture Notes/Lecture 5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md",
+                "file": "PrinProg314/Lecture Notes/Lecture 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PrinProg314/Problem Sets/hw1/314_HW_1.md"
+                "file": "PrinProg314/Lecture Notes/Lecture 5.md"
               }
             }
           },
@@ -193,17 +196,17 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "28d63185c381ae2a",
+  "active": "41de008fdbc59485",
   "lastOpenFiles": [
-    "Excalidraw/eps-nfa.excalidraw.md",
-    "PrinProg314/Problem Sets/hw1/314_HW_1.md",
-    "PrinProg314/textbook.pdf",
-    "PrinProg314/Problem Sets/hw1/hw1.pdf",
-    "Regression463/Notebook.md",
-    "PrinProg314/Notebook.md",
-    "Regression463/Lecture Notes/Lecture 1.md",
     "PrinProg314/Lecture Notes/Lecture 4.md",
-    "MachineLearning461/Lecture Notes/Lecture 3.md",
-    "conflict-files-obsidian-git.md"
+    "PrinProg314/Lecture Notes/Lecture 5.md",
+    "Regression463/Problem Sets/Assignment 1/463_HW_1.md",
+    "Regression463/Notebook.md",
+    "Regression463/Problem Sets/Assignment 1/hw.pdf",
+    "PrinProg314/Problem Sets/hw1/314_HW_1.md",
+    "MachineLearning461/Syllabus.md",
+    "MachineLearning461/Notebook.md",
+    "MachineLearning461/Lecture Notes/Lecture 4.md",
+    "MachineLearning461/Lecture Notes/Lecture 3.md"
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "findText": "\\n",
-  "replaceText": "",
+  "findText": "(- \\d+\\.?\\d+)",
+  "replaceText": "**$**",
   "useRegEx": true,
   "selOnly": false,
   "caseInsensitive": false,
