@@ -1,10 +1,10 @@
 ---
-title: Lecture Notes 1
-course: STAT_463
-date: YYYY-MM-DD
+title: Lecture Notes 5
+course: CS_461
+date: 2023-02-02
 tags: 
 - lectureNotes
-- CS_XXX
+- CS_461
 ---
 
 <center><h1>Lecture X</h1></center>
