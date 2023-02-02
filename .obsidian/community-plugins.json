@@ -1,11 +1,10 @@
 [
+  "obsidian-excalidraw-plugin",
   "table-editor-obsidian",
   "dataview",
   "cm-editor-syntax-highlight-obsidian",
   "obsidian-hider",
+  "mermaid-tools",
   "obsidian-git",
-  "obsidian-regex-replace",
-  "obsidian-icon-folder",
-  "obsidian-excalidraw-plugin",
-  "mermaid-tools"
+  "obsidian-regex-replace"
 ]
