@@ -268,3 +268,33 @@ $$\begin{align}
 \end{align}$$
 
 - Given $X = x$, the response variable is randomly distributed around the value $B_0 + B_1x$ and the variance of this is the same for all $x$.
+
+**Intercept**: If the range of the explanatory variables includes 0, then this is the conditional mean of the response variable when $X=0$. If the range of the explanatory variable does not include 0, below is just a mathematical interpretation.
+
+$$E[ Y \mid X = 0] = \beta_0 + \beta_1(0) = B_0$$
+**Slope**: the change in the conditional mean of $Y \mid x$ per unit change in $x$.
+$$E[Y\mid X = (x+1)] = \beta_0 + \beta_1(x+1) = \beta_0+B_1x+B_1$$
+The **intercept** and **slope** are called the **regression coefficients**.
+
+**Error variance** ($\sigma^2$): This controls ohw the value of $Y$ are spread around the value $B_0+B_1x$ for a fixed value of $x$.
+
+
+The regression coefficients and the error variance are the model parameters.
+
+#### Additional Assumptions
+- Given two values of the explanatory variables, $x_i\quad\&\quad x_j$, assume the corresonding error terms are uncorrelated (i.e. $Cov[\epsilon_i,\epsilon_j \mid x_i, x_j] = 0$)
+$$\begin{align}
+Cov[Y_i,Y_j \mid x_i,x_j] &= Cov[\beta_0+\beta_1x_i+\epsilon_i,\beta_0+\beta_1x+\epsilon_j\mid x_i,x_j] \\
+&= Cov[\beta_0 + \beta_1x, \beta_0+\beta_1x_j \mid x_i, x_j] + Cov[B_0 + B_1x_i, \epsilon \mid x_i,x_j] \\
+&+ Cov[\epsilon_i,\epsilon_j \mid x_i,x_j] \\
+&=0
+\end{align}$$
+$Cov[\epsilon_i,\epsilon_j \mid x_i, x_j]$ in this case, this expression is assumed to be 0 because the response variables $Y_i \& Y_j$ are uncorrelated.
+
+### Estimation using Simple Linear Regression Models
+- Given a bivariate data set $(x_i,y_i) i=1,\cdot\cdot\cdot,n,$ to fit the SLM it is desired to obtain estimates of $\beta_0, \beta_1$ (and $\sigma^2$ if one wishes to do inference: hypothesis tests, confidence intervals, etc.)
+- One estimator of the regression parameters are the least squares estimates. The LSEs of the regression coefficients are given by the following equations:
+$$(\hat\beta_0, \hat\beta_1) = \text{argmin}_{(\beta_0,\beta_1)\in\mathbb{R}^2}S(\beta_0,\beta_1)$$ where we have:
+$$S(\beta_0,\beta_1) = \sum_{i=1}^n(y_i-(\beta_0+\beta_1x_i))^2$$
+
+-- Page 12
