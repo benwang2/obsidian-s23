@@ -226,7 +226,7 @@ The $pdf$ of a normal is unimodal, symmetric bell-shaped curve. There are two pa
 #### Joint Probability Density Function
 The joint $pdf$ for a continuous $brv$ $(X, Y)$ is a bivariate function from  $\mathbb{R}^2$ into $R$, often denoted $f(x,y)$ (or $f_{X,Y}(x,y)$) if there are more than two $rv$s in play).
 
-It can be geometrically visualized as a cloth lying over the x-y coordinate plane. The height of the cloth from the coordinate plane represents the probability of the event at taht coordinate occurring.
+It can be geometrically visualized as a cloth lying over the x-y coordinate plane. The height of the cloth from the coordinate plane represents the probability of the event at that coordinate occurring.
 
 Let $R$ be a region in the x-y plane, then $Pr((X,Y) \in R)$ is given as the volume under the bivariate $pdf$ surface above the region $R$.
 
@@ -236,3 +236,65 @@ $$f(x,Y)=\frac{1}{2\pi}\frac{1}{\sigma_X\sigma_Y\sqrt{1-\rho^2}}exp(-\frac{1}{2(
 
 - With $\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho \in \mathbb{R}$ and $-\infty \lt \mu_X \lt \infty$, $-\infty\lt\mu_Y\lt\infty$, $\sigma_X\gt0$, $\sigma_Y\gt 0$ and $-1 \lt \rho \lt 1$
 - $exp(z)=e^z$
+
+### Simple Linear (Regression) Model (SLM)
+- Given a bivariate $rv$, $(X, Y)$, the simple linear regression model is:
+$$Y \mid x = \beta_0 + \beta_1x + \epsilon \mid x$$
+- $x$ is known as the **explanatory** / regressor, exogenous, predictor, input variable, or covariates
+- $y$ is known as the **response** / regressand / endogenous / measured / output / outcome / criterion variable
+- $\beta_0$ is known as the intercept, sometimes called $\alpha$
+- $\beta_1$ is known as the slope (sometimes juts called $\beta$)
+- $\epsilon$ is known as the error component/term, a random variable
+
+Where:
+1. $E[\epsilon \mid x] = 0$
+2. $Var[ \epsilon \mid x] = \sigma^2$
+
+The **explained term**, $B_0+B_1x$, is the contribution to the response variable due to its linear dependence on the explanatory variable.
+
+The **unexplained term**, $\epsilon \mid x$, is the idiosyncratic error. The contribution to the response variable due to other unaccounted sources (both known & unknown).
+
+For an SLM, we assume that the values of the explanatory variables are given or known and are measured without errors, thus the SLM is a **conditional** model, that is a model for the response conditional on the value of the explanatory, (i.e. $Y \mid x$).
+
+#### Statistical Properties of SLM
+- Given a value of $x$, it follows:
+$$\mu_{Y \mid x} = E[Y \mid x] = E[ \beta_0 + \beta_1x + \epsilon \mid x] = E[\beta_0 + \beta_1x \mid x]+E[\epsilon \mid x] = \beta_0 + \beta_1x$$
+<center> and </center>
+$$\begin{align}
+\sigma^2_{Y \mid \epsilon} &= Var[Y \mid x] \\
+&= Var[\beta_0 + \beta_1x + \epsilon \mid x]\\
+&= Var[\beta_0 + \beta_1x \mid x] + Var[\epsilon \mid x] + 2Cov[\beta_0 + \beta_1x,\epsilon|x]\\
+&= \sigma^2
+\end{align}$$
+
+- Given $X = x$, the response variable is randomly distributed around the value $B_0 + B_1x$ and the variance of this is the same for all $x$.
+
+**Intercept**: If the range of the explanatory variables includes 0, then this is the conditional mean of the response variable when $X=0$. If the range of the explanatory variable does not include 0, below is just a mathematical interpretation.
+
+$$E[ Y \mid X = 0] = \beta_0 + \beta_1(0) = B_0$$
+**Slope**: the change in the conditional mean of $Y \mid x$ per unit change in $x$.
+$$E[Y\mid X = (x+1)] = \beta_0 + \beta_1(x+1) = \beta_0+B_1x+B_1$$
+The **intercept** and **slope** are called the **regression coefficients**.
+
+**Error variance** ($\sigma^2$): This controls ohw the value of $Y$ are spread around the value $B_0+B_1x$ for a fixed value of $x$.
+
+
+The regression coefficients and the error variance are the model parameters.
+
+#### Additional Assumptions
+- Given two values of the explanatory variables, $x_i\quad\&\quad x_j$, assume the corresonding error terms are uncorrelated (i.e. $Cov[\epsilon_i,\epsilon_j \mid x_i, x_j] = 0$)
+$$\begin{align}
+Cov[Y_i,Y_j \mid x_i,x_j] &= Cov[\beta_0+\beta_1x_i+\epsilon_i,\beta_0+\beta_1x+\epsilon_j\mid x_i,x_j] \\
+&= Cov[\beta_0 + \beta_1x, \beta_0+\beta_1x_j \mid x_i, x_j] + Cov[B_0 + B_1x_i, \epsilon \mid x_i,x_j] \\
+&+ Cov[\epsilon_i,\epsilon_j \mid x_i,x_j] \\
+&=0
+\end{align}$$
+$Cov[\epsilon_i,\epsilon_j \mid x_i, x_j]$ in this case, this expression is assumed to be 0 because the response variables $Y_i \& Y_j$ are uncorrelated.
+
+### Estimation using Simple Linear Regression Models
+- Given a bivariate data set $(x_i,y_i) i=1,\cdot\cdot\cdot,n,$ to fit the SLM it is desired to obtain estimates of $\beta_0, \beta_1$ (and $\sigma^2$ if one wishes to do inference: hypothesis tests, confidence intervals, etc.)
+- One estimator of the regression parameters are the least squares estimates. The LSEs of the regression coefficients are given by the following equations:
+$$(\hat\beta_0, \hat\beta_1) = \text{argmin}_{(\beta_0,\beta_1)\in\mathbb{R}^2}S(\beta_0,\beta_1)$$ where we have:
+$$S(\beta_0,\beta_1) = \sum_{i=1}^n(y_i-(\beta_0+\beta_1x_i))^2$$
+
+-- Page 12
