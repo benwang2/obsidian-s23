@@ -7,7 +7,7 @@
 - `01:198:314` - [Principles of Programming Languages](https://courses.cs.rutgers.edu/courses/314/classes/spring_2023_kremer/)
 - `04:192:380` - [Public Speaking](https://rutgers.instructure.com/courses/214742)
 - `01:198:142` - [Data 101](https://dev7796.github.io/data101_tutorial/)
-- `01:198:461` - [[Syllabus]]
+- `01:198:461` - [Machine Learning Principles](./MachineLearning461/Syllabus)
 
 # Tasks
 ## Recent work
