@@ -94,7 +94,7 @@ $brv$s are commonly notated as $(X,Y)$
 ## Probability Mass Function
 Probability mass functions are useful mathematical constructs used for describing a discrete *rv*.
 For a discrete *rv* $X$, the $pmf$, denoted as $p_X(x)$ is defined as,
-$$p_X(x)=Pr(X=x)=Pr(\{o;X(x)=x\})$$
+$$p_X(x)=Pr(X=x)=Pr(\{o;X(o)=x\})$$
 For the marbles in the urn example $S_N=\{3,4,5\}$, we have
 - $Pr(N=3) = Pr(\{Red\}) = \frac{1}{6}$
 - $Pr(N=4)=Pr({Blue,Gray})=\frac{2}{6}$
