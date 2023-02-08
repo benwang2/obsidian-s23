@@ -7,7 +7,7 @@ tags:
 - CS_461
 ---
 
-<center><h1>Lecture Y</h1></center>
+<center><h1>Lecture 5</h1></center>
 
 
 ## Bayes Rule
