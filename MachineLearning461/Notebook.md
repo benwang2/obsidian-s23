@@ -148,4 +148,75 @@ There are several approaches to avoid overfitting, but they can generally be gro
 - approaches that stop growing the tree earlier, before it reaches the point where it perfectly classifies the training data
 	- approaches that allow the tree to overfit the data, and then post-prune the tree 
 
-page 81 (page 69 in the textbook)
+
+## Naive Bayes
+Given the intractable sample complexity for learning Bayesian classifiers, we must look for ways to reduce this complexity. The Naive Bayes classifier does this by making a conditional independence assumption that dramatically reduces the number of parameters to be estimated when modeling $P(X|Y)$, from our original $2(2^n-1)$ to just $2n$.
+
+**Conditional independence**: Given three sets of random variables X, Y, and Z, we say X is **conditionally independent** of Y given Z, if and only if the probability distribution governing X is independent of the value of Y given Z.
+
+The Naive Bayes is classification algorithm based on Bayes rule and a set of conditional independence assumptions. Given the goal of learning $P(Y|X)$ where $X=\langle X_1, \cdot\cdot\cdot, X_n \rangle$ It makes the assumption that each $X_i$ is conditionally independent of each of the other $X_k$s given Y, and also independent of each subset of the other $X_k$'s given Y.
+
+This assumption dramatically simplifies the representation of $P(X | Y)$ and the problem of estimating it from the training data. 
+
+Consider the example where $X = \langle X_1, X_2 \rangle$. In this case, we have that 
+$$\begin{align}
+P(X|Y) &= P(X_1,X_2|Y) \\
+	&= P(X_1|X_2,Y)P(X_2|Y) \\
+	&= P(X_1|Y)P(X_2|Y)
+\end{align}$$
+
+where the second line follows from a general property of probabilities, and the third line follows directly from ourabove definition of conditional independence. More generally, when X contains n attributes which satisfy the conditional independence assumption, we have:
+
+$$P(X_1, \cdot\cdot\cdot, X_n|Y) = \prod_{i=1}^{n}P(X_i|Y)$$
+
+When $Y$ and $X_i$ are boolean variables, we only need $2n$ parameters to define $P(X_i=x_{ik} | Y=Y_j)$ for the necessary $i,j,k$ (compared to the $2(2^n-1)$ parameters needed to characterize without the conditional independence assumption.
+
+$$\begin{align}
+P(Y=y_k | X_1, \cdot\cdot\cdot,X_n) &= \frac{P(Y=y_k)P(X_1,\cdot\cdot\cdot,X_n|Y=y_k)}{\sum_jP(Y=y_j)P(X_1,\cdot\cdot\cdot,X_n|Y=y_j)} \\
+&= \frac{P(Y=y_k)\prod_i P(X_i|Y=y_k)}{\sum_j P(Y=y_j)\prod_i P(X_i|Y=y_j)}
+\end{align}$$
+
+ If we are interested only in the most probably value of Y, then we have the Naive Bayes classification rule:
+$$Y \leftarrow \text{argmax} \frac{P(Y=y_k)\prod_iP(X_i|Y=y_k)}{\sum_j P(Y=y_j) \prod_i P(X_i|Y=y_j)} $$
+*\*argmax is an operation that finds the argument that gives the maximum value from a target function* 
+
+We can reduce the equation above to the following (because the denominator does not depend on $Y_k$)
+
+$$Y \leftarrow \text{argmax}_{y_k} P(Y=y_k)\prod_iP(X_i|Y=y_k)$$
+### Naive Bayes for Discrete-Valued Inputs
+When the *n* attributes $X_i$ each take on $j$ possible discrete values and $Y$ is a discrete variable taking on *K* possible values, then our learning task is to estimte two sets of parameters. The first is 
+$$\theta_{ijk} \equiv P(X_i=x_ij|Y=y_k)$$
+for each input attribute $X_i$ , each of its possible values $x_ij$, and each of the possible values $y_k$ of $Y$. Note there will be $nJK$ such parameters, and note also that only $n(J-1)K$ of these parameters are independent, given that they must satisfy $1 = \sum_j \theta_{ijk}$ for each pair of $i,k$ values.
+
+In addition, we must estimate parameters that define the prior probability over Y.:
+
+$$\pi_k \equiv P(Y=y_k)$$
+In this equation, there are $K$ of these parameters, $(K-1)$ of which are independent.
+
+We can estimte these parameters using either MLE or Bayesian MAP estimates.
+MLE for $\theta{ijk}$ given a set of training examples $D$ are given by
+$$\hat\theta_{ijk} = \hat P(X_i=x_{ij}|Y=y_k)=\frac{\#D\{X_i=x_{ij}\;\land\;Y=y_k\}}{\#D\{Y=y_k\}}$$
+
+where \#D{X} returns the number of elements in set D that satisfy property X.
+
+### Naive Bayes for Continuous Inputs
+When the $X_i$ are continuous, we must use a different approach to represent the distributions $P(X_i|Y)$. One common approach is to assume that for each possible discrete value $y_k$ of $Y$, the distribution of each continuous $X_i$ is Gaussian, and is defined by a mean and standard deviation specific to $X_i$ and $y_k$.
+
+To train such a classifier, we must estimate the mean and standard deviation of each of these Gaussians:
+$$\begin{align}
+\mu_{ik} &= E[X_i|Y=y_k] \\
+\sigma^2_{ik} &= E[(X_i-\mu_{ik})^2|Y=y_k] \\
+\end{align}$$
+
+for each attribute $X_i$ and each possible value $y_k$ of $Y$. There are $2nK$ of these parameters, all of which must be estimated independently. We must also estimtae the priors on $Y$ as well.
+
+$$\pi_k = P(Y=y_k)$$
+
+
+Page 4/18
+
+https://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
+
+
+http://www.cs.cmu.edu/~tom/mlbook/Joint_MLE_MAP.pdf
+
