@@ -212,9 +212,33 @@ for each attribute $X_i$ and each possible value $y_k$ of $Y$. There are $2nK$ o
 
 $$\pi_k = P(Y=y_k)$$
 
+## Logistic Regression
+Logistic regression is an approach to learning functions of the form $f: X \rightarrow Y$, or $P(Y | X)$ in the case where $Y$ is discrete-valued, and $X = \langle X_1, \cdot\cdot\cdot, X_n \rangle$ is any vector containing discrete or continuous variables.
 
-Page 4/18
+Logistic regression assumes a parametric form for the distribution $P(Y|X)$ then directly estimtaes  its parameters from the training data. It is assumed by logistic regression in the case where $Y$ is boolean is:
+$$P(Y=1|X) = \frac{1}{1+\text{exp}(w_0+\sum_{i=1}^{n}w_iX_i)}$$
+and
+$$P(Y=0|X) = \frac{\text{exp}(w_0+\sum_{i=1}^{n}w_iX_i)}{1+\text{exp}(w_0+\sum_{i=1}^{n}w_iX_i)}$$
 
+The second equation follows directly from the first one, because the sum of these two probabilities must equal 1. Using this form allows a simple linear expression for classification.
+
+The classify any $X$, we generally want to assign the value $y_k$ that maximizes $P(Y=y_k|X)$. In other words, we assign the label $Y=0$ if the following condition holds:
+$$1 \lt \frac{P(Y=0|X)}{P(Y=1|X)}$$
+Using the previous equations of $P(Y=0|X)$ and $P(Y=1|X)$ gives us another form of the equation,
+$$1 \lt \text{exp}(w_0+\sum_{i=1}^{n} w_iX_i)$$
+and taking the natural log of both sides gives a linear classification rule that assigns label $Y=0$ if X satisfies.
+$$0 \lt w_0 + \sum_{i=1}^nw_iX_i$$ and assigns $Y=1$ otherwise.
+
+In simple terminology, if the probability of event $Y=1$ occuring given that $X$ occurs is greater than the probability of event $Y=0$, then the label $Y=0$ will be classified, Otherwise, it will be classified as $Y=1$.
+
+### Derivation of Gaussian Naive Bayes Classifier
+Consider a Gaussian Naive Bayes (GNB) classifier with the assumptions:
+- Y is a boolean, governed by a Bernoulli distribution, with parameter $\pi = P(Y=1)$
+- $X = \langle X_1, \cdot\cdot\cdot, X_n \rangle$ where each $X_i$ is a continuous random variable
+- For each $X_i,P(X_i | Y=y_k)$ is a Gaussian distribution of the form $N(\mu_{ik},\sigma_i)$
+- For all i and $j \not= i$,  $X_i$ and $X_j$ are conditionally independent given $Y$
+
+page 9/18
 https://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
 
 
