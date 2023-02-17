@@ -238,7 +238,40 @@ Consider a Gaussian Naive Bayes (GNB) classifier with the assumptions:
 - For each $X_i,P(X_i | Y=y_k)$ is a Gaussian distribution of the form $N(\mu_{ik},\sigma_i)$
 - For all i and $j \not= i$,  $X_i$ and $X_j$ are conditionally independent given $Y$
 
-page 9/18
+In general, Bayes rule allows us to write
+$$P(Y=1|X)=\frac{P(Y=1)P(X|Y=1)}{P(Y=1)P(X|Y=1)+P(Y=0)P(X|Y=0)}$$
+or, we can also write
+
+$$\sum_i(\frac{\mu_{i0}-\mu{i1}}{\sigma^2_i}X_i+\frac{\mu_{i1}^2-\mu_{i0}^2}{2\sigma^2_i})$$
+This is a linear weighted sum of the $X_i$'s. If we perform a substitution, we have that
+
+$$P(Y=0|X) = 1 - P(Y=1|X) = \frac{\text{exp}(w_0+\sigma^n_{i=1}w_iX_i)}{1+\text{exp}(w_0+\sum_{i=1}^nw_iX_i))}$$
+
+where weights $w_1, ..., w_n$ are given by 
+$$w_i = \frac{\mu_{i0} - \mu_{i1}}{\sigma_i^2}$$
+and $w_0=ln\frac{1-\pi}{\pi}+\sum_i\frac{\mu_{i1}^2-\mu_{i0}^2}{2\sigma^2_i}$
+
+
+### Estimating Parameters for Logistic Regression
+Here, we describe an alternative method for estimating the weights $w_i$ in terms of the parameters estimed by the GNB classifier.
+
+First, for the form of $P(Y|X)$ assumed by Logistic Regression holds in many problem settings beyond the GNB problem detailed in the above section.
+
+One reasonable approach to training Logistic Regression is to choose parameter values that maximize the conditional data likelihood. The **conditional data likelihood** is the probability of the observed $Y$ values in the training data, conditioned on their corresponding $X$ values.
+
+For the equation,
+$$W \leftarrow \text{arg max}_W\Pi_lP(Y^l|X^l,W)$$
+we choose parameters $W$ to satisfy $argmax$, where $W = \langle w_0,w_1...w_n\rangle$ is the vector of parameters to be estimated.
+
+$Y^l$ denotes the observed value of $Y$ in the $l$th training example, and $X^l$ denotes the observed value of $X$ in the $l$th training example. The expression, $P(Y^l|X^l,W)$ is the conditional data likelihood. We include $W$ in the conditional to emphasize that the expression is a function of the $W$ we are attempting to maximize.
+
+Equivalently, we can work with the log of the conditional likelihood:
+$$W \leftarrow \text{arg max}_w \sum_l lnP(Y^l|X^l,W)$$
+This conditional data log likelihood, which we will denote $l(W)$ can be written as
+$$l(W) = \sum_l Y^l \text{ln} P(Y^l=1|X^l,W)+(1-Y^l)\text{ln}P(Y^l=0|X^l,W)$$
+
+
+page 12/18
 https://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
 
 
