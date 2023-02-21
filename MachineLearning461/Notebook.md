@@ -148,6 +148,8 @@ There are several approaches to avoid overfitting, but they can generally be gro
 - approaches that stop growing the tree earlier, before it reaches the point where it perfectly classifies the training data
 	- approaches that allow the tree to overfit the data, and then post-prune the tree 
 
+## Estimating Probabilities
+
 
 ## Naive Bayes
 Given the intractable sample complexity for learning Bayesian classifiers, we must look for ways to reduce this complexity. The Naive Bayes classifier does this by making a conditional independence assumption that dramatically reduces the number of parameters to be estimated when modeling $P(X|Y)$, from our original $2(2^n-1)$ to just $2n$.
