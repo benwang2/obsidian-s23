@@ -17,6 +17,7 @@ int <program> {
 	if (token != "prog") return error;
     token := next_token();
     int block_ops = <block>();
+    if (block_ops == error) return error;
     token := next_token();
     if (token != ".") return error;
     return block_ops;
@@ -26,6 +27,7 @@ int <block> {
     if (token != "begin") return error;
     token := next_token();
     int stmtlist_ops = <stmtlist>();
+    if (stmtlist_ops == error) return error;
     token := next_token();
     if (token != "end") return error;
     return stmtlist_ops;
@@ -75,6 +77,7 @@ int <ifstmt> {
     if (token != "if") return error;
     token := next_token();
     int testexpr_ops = <testexpr>();
+    if (testexpr_ops == error) return error;
     token := next_token();
     if (token != "then") return error;
     token := next_token();
@@ -89,6 +92,7 @@ int <repeatstmt> {
     if (token != "repeat") return error;
     token := next_token();
     int stmt_ops = <stmt>();
+    if (stmt_ops == error) return error;
     token := next_token();
     if (token != "until") return error;
     token := next_token();
@@ -112,9 +116,10 @@ int <expr> {
         case "-":
         case "*":
             token := next_token();
-            if (!<expr>()) return error;
+            int expr_ops = <expr>();
+            if (expr_ops == error) return error;
             token := next_token();
-            return <expr>();
+            return expr_ops + <expr>();
     }
     return <var>() || <digit>();
 }
