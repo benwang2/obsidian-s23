@@ -26,7 +26,7 @@ such that $P(D \mid D) \propto P(D \mid \emptyset) P(\emptyset)$
 We may choose a prior that is **uniform** / uninformative prior: constant for all values of $\emptyset$ ==> similar to MLE, which can represent the prior belief.
 The conjugate prior: $P( \emptyset)$ and $P( \emptyset \mid D)$ have the same form.
 
-For a uniform / uninformative prior, we use $$P(\emptyset) = \frac{\emptyset^{\beta_H-1}(1-\emptyset)^{\beta_T-1}}{B(\beta_H,\beta_T)}$$
+For a uniform / uninformative prior, we use $$P(\theta) = \frac{\theta^{\beta_H-1}(1-\theta)^{\beta_T-1}}{B(\beta_H,\beta_T)}$$
 
 where $\beta_H$ and $\beta_T$ are occurences of variables, in this case, the number of heads and tails.
 
