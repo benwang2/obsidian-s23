@@ -1,0 +1,187 @@
+---
+title: "463_HW_3"
+author: "Benjamin Wang"
+date: "2023-03-09"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 2
+
+An amateur brewer wishes to better understand how the temperature that the beer ferments at (in degrees Fahrenheit) affects the alcohol content of the beer upon completion of brewing. Fortunately, the brewer has kept copious notes on his many brewing endeavors and has records for each batch on what temperature the beer fermented at and what the final alcohol content was.
+
+```{r}
+modeling = read.table("./modeling_data.txt",sep="\t",header=TRUE)
+```
+
+1)  Using the modeling dataset, visually display the data in an appropriate graph and comment on anything that may be of note. In particular, are the assumptions needed for fitting the simple linear model met?
+
+```{r}
+modeling_lm = lm(Alcohol_Percentage ~ Temperature, data=modeling)
+plot(
+  Alcohol_Percentage ~ Temperature, data=modeling,
+  main="Alcohol Percentage vs Temperature",
+  xlab="Temperature (degrees F)",
+  ylab="Alcohol Percentage"
+)
+abline(modeling_lm,col="red")
+```
+
+In this plot, we can see that there is an extraneous recording (outlier) with a negative alcohol percentage. It may be necessary to remove this outlier before fitting a simple linear model. However, at a glance it seems to be appropriate to apply a simple linear model to the modeling data.
+
+For the plot above, the outlier is not visualized because it is important to see the observations with more granularity.
+
+Addressing regression assumptions:
+
+1.  Linearity - observations are mostly on the line and therefore appropriate.
+
+2.  Homoscedasticity - this assumption is violated. Observing the residuals vs fitted values plot below shows a wide and non-normal variance.
+
+```{r}
+plot(fitted(modeling_lm), resid(modeling_lm), main = "Residuals vs. Fitted Values Plot",
+     xlab = "Fitted Values", ylab = "Residuals",ylim=c(-1,1))
+abline(h = 0, lty = "dashed")
+
+```
+
+3.  Normality of errors - Errors are mostly normal but are positively skewed, suggesting that there may be some non-normality in the distribution. However, it is appropriate.
+
+```{r}
+qqnorm(resid(modeling_lm),ylim=c(-1,2))
+qqline(resid(modeling_lm),col="red")
+```
+
+For the plot above, there is an outlier that is not visualized because it is important to see the observations with more granularity.
+
+2)  Initially, the brewer would just like to get a rough estimate of what the alcohol content would be if he ferments the batch at a given temperature. Are enough of the regression assumptions satisfied so that simple linear regression can be used towards the prior-mentioned goal? If not, what deviations do you need to address and how do you address them?
+
+Enough of the regression assumptions are satisfied, so we can use the simple linear regression model. However, we must address the outlier, which we can handle by simply removing the data point from our observation.
+
+3)  After addressing any necessary issues in part 2, fit the simple linear model to the data. Provide the parameter estimates and the R\^2 value. Overlay the estimated regression line on the plot created in part 1.
+
+```{r}
+modeling_no_outliers = modeling[modeling$Alcohol_Percentage >= 0,]
+plot(
+  Alcohol_Percentage ~ Temperature, data=modeling_no_outliers,
+  main="Alcohol Percentage vs Temperature",
+  xlab="Temperature (degrees F)",
+  ylab="Alcohol Percentage",
+  ylim=c(2,8)
+)
+
+modeling_no_outliers_lm = lm(Alcohol_Percentage ~ Temperature, data=modeling_no_outliers)
+abline(modeling_no_outliers_lm, col="red")
+summary(modeling_no_outliers_lm)
+```
+
+The R\^2 value is 0.8689. The parameter estimates are:
+
+-   Intercept = 26.173742
+
+-   Temperature = -0.357968
+
+4)  Now turn attention to the validation dataset. In order to assess how well the model works, calculate the predicted values using the batch temperatures from the validation dataset and the model from part 3. Plot these predicted values versus the actual values (the actual alcohol content) from the validation dataset in a scatter plot. Additionally, calculate the sample correlation between the predicted values and the actual values.
+
+```{r}
+validation = read.table("./validation_data.txt",sep="\t",header=TRUE)
+predicted = predict(modeling_no_outliers_lm, data.frame(Temperature=validation[,1]))
+comparison = data.frame(Predicted=predicted, Observed=validation[,2])
+comparison_lm = lm(Predicted ~ Observed, data=comparison)
+plot(Predicted ~ Observed, data=comparison,pch=20, main="Predicted vs Actual Alcohol Percentage")
+abline(comparison_lm,col="red")
+
+cor(comparison$Observed, comparison$Predicted)
+```
+
+The sample correlation between predicted and actual is 0.9170591.
+
+5)  As is evident from part 1, for a given fermentation temperature, there is a tremendous amount of variability in the alcohol content of the batch. Consequently, for any given temperature, the brewer would like to get bands that encompass what the final alcohol content of a batch would be with probability 95%. Were the steps taken in part 2 enough to still warrant the use of simple linear regression for this goal, or are there still model deviations that need to be addressed? If so, what are the remaining deviations and how do you address them?
+
+The steps taken in part 2 were not enough to warrant the use of simple linear regression for this goal, because of the heteroscedasticity. The heteroscedasticity in the model must be addressed, which we could handle with various transformations, or with weighted least squares regression.
+
+6)  After addressing any additional issues in part 5, obtain a new model for the data. Describe how you arrived at this model. For a given temperature, x, write out the formula for the predicted alcohol content specified for your model. Overlay the estimated regression curve on the plot created in part 1.
+
+```{r}
+plot(
+  Alcohol_Percentage ~ Temperature, data=modeling_no_outliers,
+  main="Alcohol Percentage vs Temperature",
+  xlab="Temperature (degrees F)",
+  ylab="Alcohol Percentage"
+  #ylim=c(2,8)
+)
+
+# Observing Weighted-Least-Squares model: Slightly improves heterodasticity
+modeling_weights = fitted( lm(abs(residuals(modeling_no_outliers_lm))~fitted(modeling_no_outliers_lm)) )^2
+
+wls_model = lm(Alcohol_Percentage ~ Temperature, data=modeling_no_outliers, weights=modeling_weights)
+
+abline(modeling_no_outliers_lm,col="red")
+abline(wls_model,col="blue",lwd=2)
+
+# Observing the log transformed model: Slightly improves heterodasticity
+plot(modeling_no_outliers$Temperature, log(modeling_no_outliers$Alcohol_Percentage), main="Log transformation")
+
+# Observing the sqrt transformed model: Does not improve heterodasticity
+plot(modeling_no_outliers$Temperature, sqrt(modeling_no_outliers$Alcohol_Percentage), main="Sqrt Transformation")
+
+# Observing the inverse transformed model: Does not improve heterodasticity
+plot(modeling_no_outliers$Temperature, 1/modeling_no_outliers$Alcohol_Percentage, main="Inverse Transformation")
+```
+
+I arrived at this model by testing the different transformations (log, sqrt, inverse) only to find that none of these significantly reduce heteroscedasticity. I determined that a WLS regression model would be appropriate because it assigns lower weights to points with higher variance and could possibly mitigate the heteroscedasticity of the model more than the other standard transformations. The weighted least squares regression model is displayed in blue.
+
+For a given temperature x, we have the function f(x) which is given as:
+
+f(x) = -0.356431\*x + 26.079850
+
+7)  Repeat part 4, this time using the model you obtained in part 6.
+
+```{r}
+predicted_model = predict(wls_model, data.frame(Temperature=validation[,1]))
+comparison_model = data.frame(Predicted=predicted_model, Observed=validation[,2])
+comparison_model_lm = lm(Predicted ~ Observed, data=comparison_model)
+plot(Predicted ~ Observed, data=comparison_model,pch=20)
+abline(comparison_model_lm,col="blue",lwd=2)
+
+cor(comparison_model$Observed, comparison_model$Predicted)
+```
+
+8.  As mentioned in part 5, for any given fermentation temperature the brewer would like to obtain bands that encompass what the final alcohol content of a batch would be with probability 95%. Write out a formula for the upper and lower endpoints for these bands as a function of the explanatory variable (possibly transformed). Overlay these bands on the plot created in part 1.
+
+```{r}
+plot(
+  Alcohol_Percentage ~ Temperature, data=modeling_no_outliers,
+  main="Alcohol Percentage vs Temperature",
+  xlab="Temperature (degrees F)",
+  ylab="Alcohol Percentage",
+  ylim=c(2,8)
+)
+
+modeling_no_outliers_lm = lm(Alcohol_Percentage ~ Temperature, data=modeling_no_outliers)
+abline(wls_model,col="blue",lwd=2)
+
+conf_int = predict(modeling_no_outliers_lm, interval="prediction", level=0.95)
+conf_int = cbind(modeling_no_outliers$Temperature, conf_int)
+conf_int = conf_int[order(conf_int[,1]),]
+points(conf_int[,1], conf_int[,3], type="l", lty=2, col="purple")
+points(conf_int[,1], conf_int[,4], type="l", lty=2, col="green")
+
+#print("Lower bound")
+lower_bound = lm(conf_int[,3]~conf_int[,1])
+coef(lower_bound)
+#print("Upper bound")
+upper_bound = lm(conf_int[,4]~conf_int[,1])
+coef(upper_bound)
+```
+
+Let x be the temperature in degrees fahrenheit, and y be the alcohol percentage.
+
+The upper endpoints lie along the line, y = 26.974 - 0.359x.
+
+The lower endpoints lie along the line y=25.373-0.357x.
