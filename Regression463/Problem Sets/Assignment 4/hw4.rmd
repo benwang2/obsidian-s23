@@ -1,0 +1,68 @@
+---
+title: "Homework4"
+author: "Benjamin Wang"
+date: "2023-03-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 4
+
+Rocket Motors, manufacturer of high-end sport bikes, just released its newest bike line, the Speed Demon. To get an understanding of the motorcycle’s performance, the bike was driven on a closed course by a professional driver at a constant speed for 5 minutes and various data points recorded, among them being the fuel efficiency (measured in miles per gallon (MPG)). These calibrations runs were performed 200 times at a variety of speeds. Do the following:
+
+```{r}
+mpg = read.csv("./mpg_data.txt",sep="\t")
+```
+
+1) Create a scatterplot of the data from the calibration runs, plotting the MPG on the vertical axis and speed on the horizontal axis (be sure to properly label your plot). Does there appear to be an association between the speed the bike is driven at and the MPG? If so, explain what the nature of the relationship seems to be.
+
+There appears to be a quadratic relationship between MPG and Speed. As speed gets nearer to 60 mph, MPG increases. As speed gets further from 60 mph, MPG decreases.
+
+```{r}
+plot(MPG ~ Speed_.mph., data=mpg,
+     xlab="Speed (mph)",
+     ylab="MPG",
+     main = "MPG vs Speed"
+  )
+```
+
+2) The National Highway Traffic Safety Administration (NHTSA) requires all vehicles marketed in the US to provide ranges for what the mean MPG is at a variety of speeds. Treating MPG as the response variable and speed as the explanatory variable, are enough of the model assumptions satisfied in order to fit a polynomial model to this data towards the prior purpose? If not, explain what must be done to address the deviations from the needed model assumptions (if necessary).
+
+1. This model appears to be quadratic - it is nonlinear and **does not satisfy the linearity assumption**.
+2. The p-value is less than 0.05 and therefore **there is heteroscedasticity** in this model.
+```{r}
+library(lmtest)
+mpg$speed = mpg$Speed_.mph.
+mpg$speed2 = mpg$speed^2
+
+# Get line of fit
+quadraticModel = lm(MPG ~ speed + speed2, data=mpg)
+speedValues = seq(0, 120, 0.5)
+mpgPredict = predict(quadraticModel, list(speed=speedValues, speed2=speedValues^2))
+
+plot(mpg$speed, mpg$MPG, pch=20, cex=1, ylim=c(0,50))
+lines(speedValues, mpgPredict, col='blue', lwd=4)
+
+# Display 90% confidence interval
+PI2 = predict(quadraticModel, interval = "prediction", level = 0.9)
+PI2 = cbind(mpg$speed, PI2)
+PI2 = PI2[order(PI2[,1]),]
+points(PI2[,1], PI2[,3], type = "l", lty = 2, col = 4)
+points(PI2[,1], PI2[,4], type = "l", lty = 2, col = 4)
+
+# Display residuals vs fitted values plot
+plot(fitted(quadraticModel), resid(quadraticModel), main = "Residuals vs. Fitted Values Plot",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, lty = "dashed")
+
+# Breusch Pagan test
+bptest(quadraticModel)
+```
+3. Generally, errors are normal. However at the ends of the line, there is an outlier and a slight deviation from the line (negative on left end and positive on right end).
+```{r}
+qqnorm(resid(quadraticModel))
+qqline(resid(quadraticModel),col="red")
+```
