@@ -1,0 +1,7 @@
+(define delete
+    (lambda (a l)
+        (if (null? l)
+            '()
+            '()))
+
+(delete ’c ’(a((b)(c d)(((e))))))
