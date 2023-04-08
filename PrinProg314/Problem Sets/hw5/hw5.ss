@@ -13,8 +13,7 @@
 ))
 
 ; 1.2
-(define times-a-4 (cons * (cons 'a (cons '4 '()))))
-((car times-a-4) 5 3)
+(cons * (cons 'a (cons '4 '())))
 
 ; 2.1
 (define (flatten l)
@@ -23,14 +22,11 @@
     (if (symbol? l)
         (cons l '())
         (append (flatten (car l)) (flatten (cdr l)))
-	)
+	  )
   )
 )
 
-(flatten '((a) ((b)) (c)))
-
 ; 2.2
-
 (define rev
     (lambda (l)
         (if (null? l)
@@ -43,26 +39,24 @@
     )
 )
 
-(rev '(a b c (d e f (g (((h))) i))))
-
 ; 2.3
 (define delete
-    (lambda (a l)
-      (cond
-        ((null? l) '())
-        ((symbol? l) l)
-        ((list? l) (if (equal? (car l) a)
-                       (if (null? (cdr l))
-                           '()
-                           (delete a (cdr l))
-                       )
-                       (cons (delete a (car l)) (delete a (cdr l))))
-                   )
+  (lambda (a l)
+    (cond
+      ((null? l) '())
+      ((symbol? l) l)
+      ((list? l)
+        (if (equal? (car l) a)
+          (if (null? (cdr l))
+            '()
+            (delete a (cdr l))
+          )
+          (cons (delete a (car l)) (delete a (cdr l)))
+        )
       )
     )
+  )
 )
-
-(delete 'e '(b c ((g e f)) d))
 
 ; 2.4
 
@@ -77,8 +71,6 @@
   )
 )
 
-(merge-sorted '(1 3 5) '(2 6 8))
-
 ; 3.1
 (define NewTable (lambda () '()))
 
@@ -89,7 +81,7 @@
   )
 )
 
-; 3.3	`````	
+; 3.3
 (define LookupTable
   (lambda (variable table)
     (cond
@@ -113,7 +105,6 @@
 			id  
 			(op (car l) (reduce op (cdr l) id)) )))
 
-
 (define minSquareVal
   (lambda (l)
     (reduce
@@ -124,7 +115,6 @@
   )
 )
 
-
 (define maxSquareVal
   (lambda (l)
     (reduce
@@ -134,6 +124,3 @@
     )
   )
 )
-
-(minSquareVal '(-5 3 -7 10 -11 8 7))
-(maxSquareVal '(-5 3 -7 10 -11 8 7))

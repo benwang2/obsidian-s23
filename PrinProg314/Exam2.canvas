@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"type":"file","file":"PrinProg314/Topic Notes/ILOC Optimizations.md","id":"bd1a20ba1a909f75","x":-1120,"y":-80,"width":400,"height":400},
+		{"type":"file","file":"PrinProg314/Topic Notes/Constant Folding.md","id":"007dc48f7a26b1c1","x":-1560,"y":520,"width":400,"height":400},
+		{"type":"file","file":"PrinProg314/Topic Notes/Strength Reduction.md","id":"8fc6a0a74d532b74","x":-1120,"y":520,"width":400,"height":400},
+		{"id":"0c76ffbdc275f101","x":-680,"y":520,"width":400,"height":400,"type":"file","file":"PrinProg314/Topic Notes/Deadcode Elimination.md"}
+	],
+	"edges":[
+		{"id":"da37b865d1eb38ff","fromNode":"007dc48f7a26b1c1","fromSide":"top","toNode":"bd1a20ba1a909f75","toSide":"bottom"},
+		{"id":"d3e924a1d105c39c","fromNode":"8fc6a0a74d532b74","fromSide":"top","toNode":"bd1a20ba1a909f75","toSide":"bottom"},
+		{"id":"4c569885d008d311","fromNode":"0c76ffbdc275f101","fromSide":"top","toNode":"bd1a20ba1a909f75","toSide":"bottom"}
+	]
+}
