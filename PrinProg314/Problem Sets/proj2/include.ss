@@ -1,7 +1,9 @@
+
 ; *********************************************
 ; *  314 Principles of Programming Languages  *
 ; *  Spring 2023                              *
 ; *********************************************
+
 
 ;; -----------------------------------------------------
 ;; character to value mapping
@@ -40,11 +42,10 @@
 ;; Magic constant A used in multiplication methos
 ;;
 
-(define A 0.6779339887)
+(define A 0.6180339887)
 
 (define reduce
   (lambda (op l id)
     (if (null? l)
        id
        (op (car l) (reduce op (cdr l) id)) )))
-
