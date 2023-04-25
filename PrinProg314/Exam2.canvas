@@ -1,18 +1,18 @@
 {
 	"nodes":[
-		{"type":"text","text":"# Exam 2 Topics\nTopics (lectures 11 - 19)\n\n- first project: ILOC optimizations\n\n- C and pointers\n\n- procedure (stack) frames, parameter passing, runtime environment, static and dynamic scoping, ILOC code for accessing non-local and local variables\n\n- basic lambda calculus: lambda terms, beta-reduction (no Y combinator)","id":"da5f4344d8139c03","x":-1305,"y":-800,"width":690,"height":320},
 		{"type":"file","file":"PrinProg314/Topic Notes/Stack Frames.md","id":"275be5d2f7e026f5","x":-960,"y":-320,"width":480,"height":480},
 		{"type":"file","file":"PrinProg314/Topic Notes/ILOC Optimizations.md","id":"bd1a20ba1a909f75","x":-280,"y":-320,"width":400,"height":460},
 		{"type":"file","file":"PrinProg314/Topic Notes/Constant Folding.md","id":"007dc48f7a26b1c1","x":-720,"y":330,"width":400,"height":620},
 		{"type":"file","file":"PrinProg314/Topic Notes/Strength Reduction.md","id":"8fc6a0a74d532b74","x":-280,"y":330,"width":400,"height":620},
 		{"type":"file","file":"PrinProg314/Topic Notes/Deadcode Elimination.md","id":"0c76ffbdc275f101","x":160,"y":330,"width":400,"height":620},
-		{"type":"file","file":"PrinProg314/Topic Notes/C Language.md","id":"117be8c63e410007","x":-360,"y":-940,"width":400,"height":460},
 		{"type":"file","file":"PrinProg314/Topic Notes/Variable scoping.md","id":"9d6a0547ec6e1a3a","x":-2100,"y":-310,"width":440,"height":440},
 		{"type":"file","file":"PrinProg314/Topic Notes/ILOC RISC Code.md","id":"692db0a102ac8aa7","x":-1600,"y":-310,"width":495,"height":470},
 		{"type":"file","file":"PrinProg314/Topic Notes/Runtime Environments.md","id":"9bf85ca5166785c1","x":-1345,"y":300,"width":560,"height":600},
 		{"type":"file","file":"PrinProg314/Topic Notes/Dynamic Scoping.md","id":"2597db1fac44dfbe","x":-2300,"y":280,"width":400,"height":620},
 		{"type":"file","file":"PrinProg314/Topic Notes/Static Scoping.md","id":"36be45b8105aa376","x":-1860,"y":280,"width":400,"height":620},
-		{"id":"9500d637cac13c9a","x":-2160,"y":-1151,"width":560,"height":671,"type":"file","file":"PrinProg314/Topic Notes/Lambda Calculus.md"}
+		{"type":"text","text":"# Exam 2 Topics\nTopics (lectures 11 - 19)\n\n- first project: ILOC optimizations\n\n- C and pointers\n\n- procedure (stack) frames, parameter passing, runtime environment, static and dynamic scoping, ILOC code for accessing non-local and local variables\n\n- basic lambda calculus: lambda terms, beta-reduction (no Y combinator)","id":"da5f4344d8139c03","x":-1305,"y":-1046,"width":690,"height":336},
+		{"type":"file","file":"PrinProg314/Topic Notes/Lambda Calculus.md","id":"9500d637cac13c9a","x":-2100,"y":-1213,"width":660,"height":671},
+		{"type":"file","file":"PrinProg314/Topic Notes/C Language.md","id":"117be8c63e410007","x":-420,"y":-1170,"width":680,"height":628}
 	],
 	"edges":[
 		{"id":"243c22f62e15cba4","fromNode":"da5f4344d8139c03","fromSide":"bottom","toNode":"bd1a20ba1a909f75","toSide":"top"},
