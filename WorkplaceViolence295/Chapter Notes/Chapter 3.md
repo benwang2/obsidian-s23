@@ -1,0 +1,51 @@
+- Besides financial costs there are other indirect costs of workplace violence to people, families, organizations and society.
+- Workplace violence results in 3 - 4 billion dollars annually in medical costs.
+- Sources of workplace violence
+	- Robberies
+	- Business disputes
+	- Personal disputes
+	- Police in the line of duty
+- Characteristics of those who commit violent acts
+	- Male over the age of 30 (80%)
+	- Current employee (20%)
+	- Strangers (66%)
+- Women are more likely to be attacked by someone they know
+- Gangs and groups are associated with workplace violence and aggression but the
+largest share of violent acts are committed by lone offenders
+- There are 6 different types of assailants in the workplace
+	- Angry customers
+	- Mentally ill persons
+	- Batters in domestic disputes
+	- Criminals
+	- Abusive supervisors
+- Real victims of workplace violence are retail workers, taxi drivers, and
+convenience workers
+- Half the injuries related to workplace violence are due to robberies
+- Those at highest risk are
+	- Men
+	- Self-employed
+	- Gas station attendants
+	- Law enforcement
+	- Taxi drivers
+- Health care workers, correctional officers, teachers, and social service workers are
+more likely to be victimized
+- More likely to occur in cities
+- More than just the victim suffers the consequences of a violent incident
+- Age, family support, prior experience, coping mechanisms, and perception are
+key in managing through a violent incident
+- Victims of workplace violence often display
+	- Post traumatic stress syndrome
+	- Flashback/re-experiencing
+	- Withdrawal
+	- Anger/irritability
+	- Problems sleeping/concentrating
+	- Exaggerated startle response
+- Just hearing about an incident can affect someone
+- Psychological or emotional problems can result from workplace violence
+	- Self doubt
+	- Depression
+	- Fear
+	- Inability to function
+	- Interrupted relationships
+- Leads to negative moods at work, dissatisfaction, poor work performance, and
+turnover

@@ -1,0 +1,31 @@
+- Those who act aggressively in the workplace may believe their actions were  
+justified, anyone else would have reacted the same way, they were pushed to it, or  
+it was the other person’s fault  
+- Personal and psychological factors related to workplace violence  
+	- Type A personality  
+	- Self monitoring ability  
+	- Mood and negative affectivity  
+	- Domestic or intimate partner violence  
+- Behavior factors  
+	- Drug abuse  
+	- History of violence  
+	- Revenge  
+	- Inability to handle frustration  
+	- Perception of unfairness  
+	- Use of threats  
+- Environmental factors  
+	- Stress  
+	- Rushed deadlines  
+	- Inadequate lighting or temperature  
+	- Job security  
+	- Aggressive or absent communication  
+- Stressors build over time  
+- Aggression continues when the perception is management has the ability to control but ignores or perception of unfairness  
+- Social and cultural factors  
+	- Guns  
+	- Violent environment  
+	- Deinstitionalization  
+	- Media  
+- Some studies show violence in media causes violence in children  
+- Not all children and adults are affected by media violence  
+- Statistically media shows twice as much violence than there actually  is society wants sensationalism and violence

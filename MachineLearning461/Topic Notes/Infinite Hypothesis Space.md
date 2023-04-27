@@ -1,3 +1,7 @@
+## Sample complexity
+$$m \geq \frac{2}{\epsilon}[log_2(2H[2m])+log_2(\frac{1}{\delta})]$$
+
+
 ## Shattering
 Over an infinite hypothesis space $H$, we replace $|H|$ with other masures of $H$, e.g. the shattering coefficient and VC dimension.
 

@@ -1,0 +1,16 @@
+- Workplace violence can be any act of physical violence, threats of physical violence, harassment, intimidation, or other threatening, disruptive behavior that occurs at the work site; implicit or explicit
+- 3 types of workplace violenec
+	- Violence due to robberies
+	- Violence between co-workers
+	- Violence by those who have a right to be on the premises (clients, customers, patients, students)
+- Aggression is either masculine (direct and physical) or feminine (in-direct and non-physical )
+- Emotional abuse - verbal or non-verbal behaviors (yelling, using derogatory names, aggressive eye contact, silent treatment) especially in front of others
+- Passive - aggressive behavior - forgetting appoints, not returning calls or emails, spreading rumors or false information; when done consistently, intended to hurt, annoy, or bother another person
+- OSHA - Occupational Safety and Health Act
+- Requires an employer take steps to provide a healthy, safe and secure employee workspace
+- Employer may be found negligent for not doing a background check
+- An employee discharged because of accusations of violence can sue for wrongful discharge
+- When an employer mistakenly warns employees of a fellow employee’s violent tendencies the employer can be sued for defamation of character
+- A therapist has the duty to warn a victim if there is belief there is a potential danger (not applicable in all states)
+- Workers compensation covers employees’ injuries due to workplace violence
+- The Americans with Disabilities Act covers mental or emotional illness only if it amounts to a mental impairment 

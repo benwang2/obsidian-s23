@@ -1,6 +1,6 @@
 {
-  "findText": "(- \\d+\\.?\\d+)",
-  "replaceText": "**$**",
+  "findText": "\\no ",
+  "replaceText": "\t- ",
   "useRegEx": true,
   "selOnly": false,
   "caseInsensitive": false,

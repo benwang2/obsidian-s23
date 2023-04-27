@@ -1,0 +1,22 @@
+- Homicide is the 2nd leading cause of occupational death
+- Workplace homicide is the fastest growing form of homicide
+- Most workplace violence goes unreported
+- Men are more likely to be victims of assault and homicide by a stranger
+- Women are more likely to be assaulted by someone they know
+- 80% of violent acts in the workplace are comitted by white men over 30 years old
+- Workplace violence is committed by
+	- 3% former employees
+	- 20% current employees
+	- 66% people outside of organization
+- Most workplace violence is verbal, indirect, and passive
+- Aggression - verbal, emotional, mental, or physical behavior meant or taken to be threatening
+- Bullying - harassing, offending, socially excluding someone or negatively affecting someone's work
+- Mobbing - behaviors in which more than one person gangs up on another
+- Incivility - rudeness intended to harm or negatively influence others or blatant disregard of another's feelings which does not change with feedback
+- Perception of relative risk - those we erroneously perceive to be a risk because of stereotyping
+- Perceptual set - we hear or see what we expect (getting another's intentions wrong)
+- Self fulfilling prophecy - an event comes true because you thing it's going to come true (you start behaving as if it were true)
+- Causal attribution - our interpretation of the causes of behavior
+- Fundamental attribution error - looking at someone's behavior and attributing it to some internal factor
+- Self serving bias - the way we tend to explain our failures with external attribution and our successes with internal attribution
+- Just world hypothesis - bad things only happen to those who deserve it or bring it upon themselves

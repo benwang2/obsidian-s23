@@ -1,0 +1,26 @@
+- Sexual Harassment violates Title VII of the Civil Rights Act
+- Two types ~ Quid Quo Pro and Hostile Work Environment
+- Defined as unwelcomed sexual advances, requests for sexual favors and other verbal or physical conduct of a sexual nature when used for the basis of employment decisions, or has the purpose or effect of creating a hostile work environment whether implicit or explicit.
+- Can be verbal, physical, visual, or written
+- Can happen between managers and their employees or peer to peer, between same sex or opposite sex 
+- More prevalent in women although men are subjected as well
+- Higher incidents in women in blue collar jobs especially those in male dominated careers as well as economically disadvantaged women, gay and lesbian employees, and those with emotional and physical disabilities.
+- Sex role spill — when an occupation is dominated by one sex, the dominant sex influences and the expectations (usually a stereotype) of the dominant sex transfers to the workplace.
+- Consensual relationships aren’t illegal in the workplace but may cause sexual harassment; most companies don’t encourage them
+- Broken Window Theory — the perception that no one cares or the issue is too trivial to be handled immediately
+- Employers are required to train employees, investigate all complaints, discipline offenders, and issue a strong policy prohibiting sexual harassment Intent of behavior is not important it is the Perception of the one receiving the behavior
+- Effects of sexual harassment are the same of those who have experienced workplace violence
+
+- Internal response
+	- Detachment
+	- Denial
+	- Relabeling
+	- Illusionary control
+	- Endurance
+
+- External response
+	- Avoidance
+	- Confrontation
+	- Reporting/file a claim
+	- Social support
+	- Appeasement 
