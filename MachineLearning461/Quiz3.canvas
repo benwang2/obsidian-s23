@@ -1,6 +1,23 @@
 {
 	"nodes":[
-		{"id":"3d5807bf6f0d879f","x":-640,"y":-220,"width":400,"height":400,"type":"file","file":"MachineLearning461/Topic Notes/Generalization.md"}
+		{"type":"text","text":"Quiz 3","id":"d6ddff51deeb44e0","x":-100,"y":-500,"width":250,"height":60},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Generalization.md","id":"3d5807bf6f0d879f","x":-780,"y":-840,"width":400,"height":330},
+		{"type":"file","file":"MachineLearning461/Topic Notes/VC Dimension.md","id":"67a833acdfceeb84","x":-760,"y":-1380,"width":400,"height":400},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Infinite Hypothesis Space.md","id":"e8d4a6ec0e39d012","x":-1440,"y":-1450,"width":560,"height":540},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Hypotheses.md","id":"8468a9d46f15681c","x":-1240,"y":-280,"width":560,"height":570},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Cross validation.md","id":"deec1d338224064c","x":-1720,"y":-760,"width":560,"height":400},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Reinforcement Learning.md","id":"4e15e55db6fa2617","x":-195,"y":-320,"width":440,"height":600},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Q learning.md","id":"d65c2024fa58c437","x":-185,"y":360,"width":420,"height":600},
+		{"type":"file","file":"MachineLearning461/Topic Notes/Unsupervised Learning.md","id":"7ede829bb52df794","x":420,"y":-840,"width":416,"height":400}
 	],
-	"edges":[]
+	"edges":[
+		{"id":"e282fd60714e6e18","fromNode":"d6ddff51deeb44e0","fromSide":"left","toNode":"3d5807bf6f0d879f","toSide":"right"},
+		{"id":"4512b71673ed901c","fromNode":"3d5807bf6f0d879f","fromSide":"left","toNode":"e8d4a6ec0e39d012","toSide":"bottom"},
+		{"id":"6914443498135270","fromNode":"e8d4a6ec0e39d012","fromSide":"right","toNode":"67a833acdfceeb84","toSide":"left"},
+		{"id":"6ba65f2951d447b7","fromNode":"3d5807bf6f0d879f","fromSide":"left","toNode":"deec1d338224064c","toSide":"right"},
+		{"id":"ca6c7d66ef944565","fromNode":"3d5807bf6f0d879f","fromSide":"left","toNode":"8468a9d46f15681c","toSide":"top"},
+		{"id":"153cea0b19771da1","fromNode":"d6ddff51deeb44e0","fromSide":"right","toNode":"7ede829bb52df794","toSide":"left"},
+		{"id":"e69590aacb3d6870","fromNode":"d6ddff51deeb44e0","fromSide":"bottom","toNode":"4e15e55db6fa2617","toSide":"top"},
+		{"id":"24f5f40af38a7f91","fromNode":"4e15e55db6fa2617","fromSide":"bottom","toNode":"d65c2024fa58c437","toSide":"top"}
+	]
 }

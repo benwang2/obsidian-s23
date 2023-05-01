@@ -2,6 +2,4 @@ Generalization is the ability of a machine learning model to perform well over f
 
 In machine learning, it's important to build models that **generalize** well to new data as opposed to overfitting to the training data.
 
-![[./hypotheses]]
-
 

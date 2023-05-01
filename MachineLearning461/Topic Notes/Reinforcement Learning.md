@@ -25,3 +25,23 @@ $$E[r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \cdot\cdot\cdot] \text{ for } 0 \l
 for every possible starting state $s_0$.
 
 We also have $r(s, a)$, which specifies the *immediate reward* given a state and action. The control policy maximizes the summation of $r(s_t,a_t)$.
+
+## Bellman Equation
+
+The Bellman equation is given by:
+$$V(s) = R(s) + \underset{a\in A}{max}\gamma \sum_{s'\in S}P_{sa}(s')V^*(s')$$
+
+where:
+- $V(s)$ is the value of state $s$
+- $R(s)$ is the immediate reward obtained from being in state $s$
+- $\gamma$ is the discount factor that determines the importance of future rewards relative to immediate rewards
+- $P_{sa}(s')$ is the transition probability from state s to state s' when action $a$ is taken
+- $V^*(s')$ is the optimal value of state s' (the maximum expected cumulative reward that can be obtained from state s' by following optimal policy)
+
+and the optimal policy can be derived from the optimal value function:
+$$\pi^*(s) = \text{arg} \underset{a\in A}{\text{max}}\sum_{s'\in S}P_{sa}(s')V^*(s')*$$
+
+## Limitation
+What if we don't have access to the transition probabilities?
+
+We use action-value Q(s,a) instead of value function V(s)

@@ -25,3 +25,24 @@ True and empirical error of a hypothesis can be described by a Venn Diagram.
 Negative symbols represent a negative training example and a positive symbol represents a  positive training example.
 
 Although all training examples are correctly classified, the error can never be zero.
+
+For this venn diagram, we compute true error to be 66% or $\frac{4}{6}$, and empirical error to be 0%. 
+
+This is because out of 6 instances, we have 2 that are correctly classified. Although the negative training examples aren't relevant to the classifying task, we still count these as inaccuracies for true error.
+
+In empirical error, we omit the instances that are not relevant to the classifying task and instead only count the ones that exist within the venn diagram circles.
+
+## Sample Complexity
+
+We can find the minimum $m$ so that we are $x$% sure that the true error is less than $y$, using the following formula.
+
+$$m = \frac{1}{\epsilon}\bigg[\text{ln}(|H|)+\text{ln}\Big(\frac{1}{\delta}\Big)\bigg]$$
+
+where $\epsilon = 1-x$ and $\delta=1-y$.
+We use this formula when the hypothesis space is perfect (no disagreement between target concept and hypothesis)
+
+When we can not find $h$ such that $h$ is perfectly consistent with the data,
+
+we use the formula
+
+$$m \geq \frac{1}{2\epsilon^2}\Big(\text{ln}(2|H|)+\text{ln}\Big(\frac{1}{\delta}\Big)\Big)$$
